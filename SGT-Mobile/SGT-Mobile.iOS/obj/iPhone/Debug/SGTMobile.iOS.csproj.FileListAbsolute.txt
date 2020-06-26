@@ -1,0 +1,8 @@
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile.iOS\obj\iPhone\Debug\optimized\
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile.iOS\obj\iPhone\Debug\SGTMobile.iOS.csprojAssemblyReference.cache
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile.iOS\obj\iPhone\Debug\SGTMobile.iOS.csproj.CoreCompileInputs.cache

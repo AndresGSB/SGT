@@ -1,0 +1,17 @@
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\bin\Debug\netstandard2.0\SGT-Mobile.deps.json
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\bin\Debug\netstandard2.0\SGT-Mobile.dll
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\bin\Debug\netstandard2.0\ref\SGT-Mobile.dll
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\bin\Debug\netstandard2.0\SGT-Mobile.pdb
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\SGT-Mobile.csprojAssemblyReference.cache
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\SGT-Mobile.AssemblyInfoInputs.cache
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\SGT-Mobile.AssemblyInfo.cs
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\SGT-Mobile.csproj.CoreCompileInputs.cache
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\SGT-Mobile.dll
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\ref\SGT-Mobile.dll
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\SGT-Mobile.pdb
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\MasterPage.xaml.g.cs
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\MasterPageDetail.xaml.g.cs
+E:\JAMS\Trabajo\GSB\Mobile\SGT-Mobile\SGT-Mobile\SGT-Mobile\obj\Debug\netstandard2.0\MasterPageMaster.xaml.g.cs
