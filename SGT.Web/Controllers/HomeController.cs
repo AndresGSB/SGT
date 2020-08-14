@@ -10,9 +10,9 @@ namespace SGT.Web.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "GSB | SGT";
 
-            return View();
+            return View("Error");
         }
     }
 }

@@ -6,50 +6,53 @@
              mc:Ignorable="d"
              x:Class="SGTMobile.MasterMenu"
              Title="Master">
-  <StackLayout>
-    <ListView x:Name="MenuItemsListView"
+    
+  <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+        <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"
+              VerticalOptions="FillAndExpand"
               ItemsSource="{Binding MenuItems}">
-      <d:ListView.ItemsSource>
-          <x:Array Type="{x:Type x:String}">
-              <x:String>Page 1</x:String>
-              <x:String>Page 2</x:String>
-          </x:Array>
-      </d:ListView.ItemsSource>
-      <ListView.Header>
-          <Grid BackgroundColor="#173159">
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
-          </Grid.ColumnDefinitions>
-          <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-          </Grid.RowDefinitions>
-          <Label
-              Grid.Column="1"
-              Grid.Row="2"
-              Text="SGT Mobile"
-              Style="{DynamicResource SubtitleStyle}"/>
-        </Grid>
-      </ListView.Header>
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
-              <Label VerticalOptions="FillAndExpand" 
-                    VerticalTextAlignment="Center" 
-                    Text="{Binding Title}" 
-                    d:Text="{Binding .}"
-                    FontSize="24"/>
-            </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-  </StackLayout>
+            <ListView.Header>
+                <Grid BackgroundColor="white">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="1" Grid.Row="0" Text="Menu"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
+                    <Label HorizontalOptions="CenterAndExpand"  Grid.Column="1" Grid.Row="1" x:Name="lbl_nombreFE" Style="{DynamicResource SubtitleStyle}" TextColor="#173159" FontAttributes="Bold"/>
+                    <Label HorizontalOptions="CenterAndExpand"  Grid.Column="1" Grid.Row="2" x:Name="lbl_emailFE"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="25,30" HorizontalOptions="FillAndExpand" BackgroundColor="White" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+
+                            <Image Source="{Binding Imagen}" WidthRequest="40" HorizontalOptions="Start"/>
+                            
+                            <Label VerticalOptions="FillAndExpand" 
+                                    VerticalTextAlignment="Center" 
+                                    Margin="20,0,0,0"
+                                    Text="{Binding Title}" 
+                                    d:Text="{Binding .}"
+                                    FontSize="18"/>
+                            
+                            <Image Source="leftArrow.png" WidthRequest="18" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout BackgroundColor="White" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+            <Image Source="logoGSB.png" WidthRequest="150" Margin="0,20,20,15" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

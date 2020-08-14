@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Edit Report"
+             NavigationPage.HasNavigationBar="True"
+             x:Class="SGTMobile.Report">
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="10" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <ActivityIndicator IsRunning="true" x:Name="Loader" Color="{StaticResource colorGray}"  AnchorX="50" AnchorY="50" />
+
+                <ScrollView>
+                    <StackLayout x:Name="layout_Form" IsVisible="false">
+                        <Label Text="Please, fill the form" FontSize="20" TextColor="{StaticResource colorPrimary}" HorizontalOptions="CenterAndExpand" ></Label>
+                    </StackLayout>
+                </ScrollView>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  x:Name="options_Form" IsVisible="false">
+                    <Button Text="Save and Preview" HorizontalOptions="FillAndExpand" Style="{StaticResource btn_green}" x:Name="btnGuardar" Clicked="btnGuardar_Clicked"></Button>
+                    <Button Text="Save and Sign" HorizontalOptions="FillAndExpand"  Style="{StaticResource btn_green}" x:Name="btnGuardarFirmar" Clicked="btnGuardarFirmar_Clicked"></Button>
+                    <Button Text="Save and Sent" HorizontalOptions="FillAndExpand"  Style="{StaticResource btn_green}" x:Name="btnGuardarEnviar" Clicked="btnGuardarEnviar_Clicked"></Button>
+                </StackLayout>
+
+            </StackLayout>
+
+            <AbsoluteLayout BackgroundColor="#22000000"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    x:Name="loader"
+                    IsVisible="false">
+                <ActivityIndicator Color="Black"
+                           AbsoluteLayout.LayoutBounds="0.5,0.5,0.1,0.1"
+                           AbsoluteLayout.LayoutFlags="All"
+                           IsVisible="True"
+                           IsRunning="True"/>
+                <Label Text="Loading..." HorizontalOptions="Center" TextColor="Black" AbsoluteLayout.LayoutBounds="0.5,0.5,0.2,0.2"
+                           AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+            
+        </AbsoluteLayout>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SGTMobile", "SGT-Mobile\SGT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGT.Web", "SGT.Web\SGT.Web.csproj", "{9EF11570-9B42-407F-91B6-7C0978866A97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGT.Model", "SGT.Model\SGT.Model.csproj", "{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,18 @@ Global
 		{9EF11570-9B42-407F-91B6-7C0978866A97}.Release|iPhone.Build.0 = Release|Any CPU
 		{9EF11570-9B42-407F-91B6-7C0978866A97}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{9EF11570-9B42-407F-91B6-7C0978866A97}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Release|iPhone.Build.0 = Release|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F2E4C4EE-09BD-4C17-B335-0E4CD5B990F9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

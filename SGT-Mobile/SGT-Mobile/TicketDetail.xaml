@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SGTMobile.TicketDetail"
+             Title="Service Detail">
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout Padding="15,15">
+                    
+                    <Grid BackgroundColor="{StaticResource colorGray}"  ColumnSpacing="1" RowSpacing="1" Padding="1" IsVisible="false" x:Name="gridTicket">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Folio" Grid.Column="0" Grid.Row="0" Style="{StaticResource lbl_titlecenter}" Padding="5"></Label>
+                            <Label x:Name="lblTitulo" Grid.Column="1" Grid.Row="0" Style="{StaticResource lbl_center}" Padding="5"></Label>
+
+                            <Label Text="Ticket Number" Grid.Column="0" Grid.Row="1" Style="{StaticResource lbl_titlecenter}" Padding="5"></Label>
+                            <Label x:Name="lblClientTicket" Grid.Column="1" Grid.Row="1" Style="{StaticResource lbl_center}" Padding="5"></Label>
+
+                            <Label Text="Client Internal &#10; Ticket Number" Grid.Column="0" Grid.Row="2" Style="{StaticResource lbl_titlecenter}" Padding="5"></Label>
+                            <Label x:Name="lblClientInternalTicket" Grid.Column="1" Grid.Row="2" Style="{StaticResource lbl_center}" Padding="5"></Label>
+
+                            <Label Text="Account" Grid.Column="0" Grid.Row="3" Style="{StaticResource lbl_titlecenter}" Padding="5"></Label>
+                            <Label x:Name="lblAccount" Grid.Column="1" Grid.Row="3" Style="{StaticResource lbl_center}" Padding="5"></Label>
+
+                            <Label Text="Activities" Grid.Column="0" Grid.Row="4" Style="{StaticResource lbl_titlecenter}" Padding="5"></Label>
+                            <Label x:Name="lbl_ServiceDetails" Grid.Column="1" Grid.Row="4" Style="{StaticResource lbl_center}" Padding="5"></Label>
+
+                            <Label Text="Requested Date &#10; Time of Service" Grid.Column="0" Grid.Row="5" Style="{StaticResource lbl_titlecenter}" Padding="5"></Label>
+                            <Label x:Name="lbl_ServiceDate" Grid.Column="1" Grid.Row="5" Style="{StaticResource lbl_center}" Padding="5"></Label>
+
+                            <Label Text="Site Name" Grid.Column="0" Grid.Row="6" Style="{StaticResource lbl_titlecenter}" Padding="5"></Label>
+                            <Label x:Name="lbl_SiteName_Name" Grid.Column="1" Grid.Row="6" Style="{StaticResource lbl_center}" Padding="5"></Label>
+
+                            <Label Text="Site Address" Grid.Column="0" Grid.Row="7" Style="{StaticResource lbl_titlecenter}" Padding="5"></Label>
+                            <Label x:Name="lbl_SiteName_Location" Grid.Column="1" Grid.Row="7" Style="{StaticResource lbl_center}" Padding="5"></Label>
+
+                            <Label Text="Point &#10; of Contact" Grid.Column="0" Grid.Row="8" Style="{StaticResource lbl_titlecenter}" Padding="5"></Label>
+                            <StackLayout Grid.Column="1" Grid.Row="8" BackgroundColor="White" Padding="5">
+                                <Label x:Name="lbl_POC_1" Style="{StaticResource lbl_3center}"></Label>
+                                <Label x:Name="lbl_Phone_POC_1" Style="{StaticResource lbl_3center}"></Label>
+                                <Label x:Name="lbl_Email_POC_1" Style="{StaticResource lbl_3center}"></Label>
+                            </StackLayout>
+
+                            <Label Text="Alternate  &#10; Point of Contact" Grid.Column="0" Grid.Row="9" Style="{StaticResource lbl_titlecenter}"></Label>
+                            <StackLayout Grid.Column="1" Grid.Row="9" BackgroundColor="White" Padding="5">
+                                <Label x:Name="lbl_Final_User" Style="{StaticResource lbl_3center}"></Label>
+                                <Label x:Name="lbl_Final_User_Phone" Style="{StaticResource lbl_3center}"></Label>
+                                <Label x:Name="lbl_Final_User_Email" Style="{StaticResource lbl_3center}"></Label>
+                            </StackLayout>
+                        </Grid>
+
+                </StackLayout>
+            </ScrollView>
+
+            <AbsoluteLayout BackgroundColor="#22000000"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    x:Name="Loader"
+                    IsVisible="true">
+                <ActivityIndicator
+                           AbsoluteLayout.LayoutBounds="0.5,0.5,0.1,0.1"
+                           AbsoluteLayout.LayoutFlags="All"
+                           IsVisible="True"
+                           Color="Gray"
+                           IsRunning="True"/>
+                <Label Text="Loading..." HorizontalOptions="Center" AbsoluteLayout.LayoutBounds="0.5,0.5,0.2,0.2"
+                           AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout BackgroundColor="#22000000"
+                    AbsoluteLayout.LayoutBounds="1,1,1,0.1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    x:Name="internetCon"
+                    Opacity="0"
+                    IsVisible="true">
+                <Label Text="No internet connection" 
+                       HorizontalOptions="Center" 
+                       TextColor="Red" AbsoluteLayout.LayoutBounds="1,0.7,1,0.5"
+                           AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+        </AbsoluteLayout>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

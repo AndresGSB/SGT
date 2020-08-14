@@ -4,12 +4,78 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Name="LoginPage"
              x:Class="SGTMobile.Login">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout Padding="30" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Image Source="logoGSB.png" VerticalOptions="Center" WidthRequest="200" Margin="0,20,0,15"/>
+                <Label Text="Log in" FontSize="20" TextColor="Black"  FontAttributes="Bold"/>
+                <Label Text="Hi there! How are you?"/>
+                <Label x:Name="lbl_error" TextColor="red" Margin="0,0,0,0" FontSize="20"></Label>
+
+                <Label Text="Email" Margin="0,10,0,-15" FontSize="18" TextColor="#002E5D" FontAttributes="Bold"/>
+                <Entry Placeholder="example@gmail.com" x:Name="txt_email" TextColor="{StaticResource colorGray}"/>
+
+                <Label Text="Password" Margin="0,0,0,-15" FontSize="18" TextColor="#002E5D" FontAttributes="Bold"/>
+                <Entry x:Name="txt_password" TextColor="{StaticResource colorGray}" IsPassword="true"/>
+
+                <Button Style="{StaticResource btn_green}" x:Name="btn_login" Text="Login" Margin="20,25" Clicked="ButtonLogin_Clicked"></Button>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                    <Label HorizontalOptions="StartAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Sign Up">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ScreenSigin , Source={x:Reference LoginPage}}"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalOptions="EndAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Forgot Password?">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding PopupForgot , Source={x:Reference LoginPage}}"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            
+            <AbsoluteLayout BackgroundColor="#22000000"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    x:Name="loader"
+                    IsVisible="false">
+                <ActivityIndicator Color="Black"
+                           AbsoluteLayout.LayoutBounds="0.5,0.5,0.1,0.1"
+                           AbsoluteLayout.LayoutFlags="All"
+                           IsVisible="True"
+                           IsRunning="True"/>
+                <Label Text="Loading..." HorizontalOptions="Center" TextColor="Black" AbsoluteLayout.LayoutBounds="0.5,0.5,0.2,0.2"
+                           AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout BackgroundColor="#22000000"
+                    AbsoluteLayout.LayoutBounds="1,0,1,0.1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    x:Name="internetCon"
+                    Opacity="0"
+                    IsVisible="true">
+                <Label Text="No internet connection" 
+                       HorizontalOptions="Center" 
+                       TextColor="Red" AbsoluteLayout.LayoutBounds="1,0.7,1,0.5"
+                           AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+        </AbsoluteLayout>
+        
     </ContentPage.Content>
 </ContentPage>

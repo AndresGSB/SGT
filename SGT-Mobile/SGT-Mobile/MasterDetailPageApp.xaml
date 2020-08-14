@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SGTMobile.MasterDetailPageApp"
-             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasNavigationBar="false"
              xmlns:pages="clr-namespace:SGTMobile">
   <MasterDetailPage.Master>
     <pages:MasterMenu x:Name="MasterPage" />
@@ -13,9 +13,9 @@
 
 
    <MasterDetailPage.Detail>
-     <NavigationPage BarBackgroundColor="#173159">
+     <NavigationPage>
       <x:Arguments>
-        <pages:MyServices />
+        <pages:MyServices/>
       </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>

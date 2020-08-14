@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sign="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             Title="Sign Report"
+             mc:Ignorable="d"
+             x:Class="SGTMobile.SignReport">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <sign:SignaturePadView x:Name="signature" StrokeWidth="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                  BackgroundColor="White" StrokeColor="Black" CaptionText="Sign">
+            </sign:SignaturePadView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  x:Name="options_Form" IsVisible="true">
+                <Button Text="Save and Sent" HorizontalOptions="FillAndExpand"  Style="{StaticResource btn_green}" x:Name="btnSent" Clicked="btnSent_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGT.Web.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -13,6 +14,11 @@ namespace SGT.Web
             // Configuración y servicios de API web
             config.Formatters.JsonFormatter.SupportedMediaTypes
                 .Add(new MediaTypeHeaderValue("text/html"));
+
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Add
+                (new MediaTypeHeaderValue("multipart/form-data"));
+
+            config.MessageHandlers.Add(new TokenValidationHandler());
 
             // Rutas de API web
             config.MapHttpAttributeRoutes();

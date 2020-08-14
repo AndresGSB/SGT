@@ -6,6 +6,56 @@
              mc:Ignorable="d"
              x:Class="SGT_Mobile.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="colorPrimary">#002E5D</Color>
+            <Color x:Key="colorPrimaryDark">#002E5D</Color>
+            <Color x:Key="colorGray">#7C878E</Color>
+            <Color x:Key="colorGreenB">#009681</Color>
 
+            <Style x:Key="btn_green" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorGreenB}"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+            <Style x:Key="btn_gray" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorGray}"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+            <Style x:Key="lbl_center" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+                <Setter Property="Padding" Value="0,8,0,8"></Setter>
+            </Style>
+
+            <Style x:Key="lbl_titlecenter" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource colorPrimary}"></Setter>
+                <Setter Property="Padding" Value="0,8,0,8"></Setter>
+            </Style>
+
+            <Style x:Key="lbl_title" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource colorPrimaryDark}"></Setter>
+                <Setter Property="Padding" Value="0,5"></Setter>
+                <Setter Property="FontSize" Value="16"></Setter>
+            </Style>
+
+            <Style x:Key="lbl_3center" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="BackgroundColor" Value="White"></Setter>
+                <Setter Property="Padding" Value="0,0,0,0"></Setter>
+            </Style>
+
+            <Style x:Key="lbl_formReport" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource colorPrimary}"></Setter>
+                <Setter Property="Padding" Value="0,0,0,0"></Setter>
+            </Style>
+
+
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

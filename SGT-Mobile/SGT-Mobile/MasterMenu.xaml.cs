@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using SGT_Mobile;
+using SGTMobile.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -16,6 +19,7 @@ namespace SGTMobile
     public partial class MasterMenu : ContentPage
     {
         public ListView ListView;
+        private RecursoIngeniero Ingeniero;
 
         public MasterMenu()
         {
@@ -23,6 +27,22 @@ namespace SGTMobile
 
             BindingContext = new MasterDetailPage1MasterViewModel();
             ListView = MenuItemsListView;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (Application.Current.Properties.ContainsKey("token") && Application.Current.Properties["token"] != null)
+            {
+                this.Ingeniero = JsonConvert.DeserializeObject<RecursoIngeniero>(Application.Current.Properties["token"] as string);
+                lbl_nombreFE.Text = Ingeniero.Name;
+                lbl_emailFE.Text = Ingeniero.Email;
+            }
+            else
+            {
+                App.Current.MainPage = new NavigationPage(new Login());
+            }
         }
 
         class MasterDetailPage1MasterViewModel : INotifyPropertyChanged
@@ -33,8 +53,8 @@ namespace SGTMobile
             {
                 MenuItems = new ObservableCollection<MenuItem>(new[]
                 {
-                    new MenuItem { Id = 0, Title = "My Services" },
-                    new MenuItem { Id = 1, Title = "Logout" },
+                    new MenuItem { Id = 0, Title = "My Services", Pagina = new MyServices(), Imagen = "homeIcon" },
+                    new MenuItem { Id = 1, Title = "Logout", Imagen = "signOut" },
 
                 });
             }

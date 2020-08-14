@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGT_Mobile;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,16 +19,23 @@ namespace SGTMobile
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        public async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as MenuItem;
             if (item == null)
                 return;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
+            if(item.Id == 1)
+            {
+                await DisplayAlert("Alert", "Logout Successful", "OK");
+                Application.Current.Properties["token"] = null;
+                App.Current.MainPage = new NavigationPage(new Login());
+                return;
+            }
 
-            Detail = new NavigationPage(page);
+            item.Pagina.Title = item.Title;
+            Detail = new NavigationPage(new MyServices());
+
             IsPresented = false;
 
             MasterPage.ListView.SelectedItem = null;

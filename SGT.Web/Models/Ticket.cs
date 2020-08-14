@@ -30,6 +30,11 @@ namespace SGT.Web.Models
 
         public string Service_Details_short_Activity { get; set; }
 
+        public string FE_Name { get; set; }
+
+        public string Report_Status_Mobile { get; set; }
+
+        public string Client_Intertal { get; set; }
 
     }
 }
