@@ -9,6 +9,7 @@ namespace SGTMobile.Models
     {
         public string Account { get; set; }
         public string Client { get; set; }
+        public int IdTicket { get; set; }
     }
 
     public class DocumentSent

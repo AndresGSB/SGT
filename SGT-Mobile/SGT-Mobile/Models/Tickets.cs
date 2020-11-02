@@ -58,6 +58,9 @@
         [JsonProperty("Client_Intertal")]
         public string ClientIntertal { get; set; }
 
+        [JsonProperty("HasAttachment")]
+        public bool HasAttachment { get; set; }
+
         public string color { get; set; }
     }
 

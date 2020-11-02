@@ -18,8 +18,7 @@ namespace SGTMobile
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TicketDetail : ContentPage
     {
-        RequestService HttpClientInstance = new RequestService();
-        private string controller = "tickets";
+        RequestService HttpClientInstance = new RequestService("tickets");
         private int TicketId;
         public Tickets ticket;
         public List<Tickets> listTicket;
@@ -31,45 +30,31 @@ namespace SGTMobile
             this.TicketId = id;
         }
 
-        protected override void OnAppearing()
+        #region Init
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
-
 
             if (Connectivity.NetworkAccess == NetworkAccess.None)
             {
                 isConnected = false;
-            }
-
-            if (!isConnected)
-            {
-                internetCon.FadeTo(1, 500);
-            }
-
-            MessagingCenter.Subscribe<App>(this, "connect", (sender) =>
-            {
-                isConnected = true;
-                internetCon.FadeTo(0, 500);
-                internetCon.IsVisible = false;
-                loadTicket();
-            });
-
-            MessagingCenter.Subscribe<App>(this, "no_connect", (sender) =>
-            {
-                isConnected = false;
-                DisplayAlert("Warning", "No Internet Connection", "Ok");
-                internetCon.IsVisible = true;
-                internetCon.FadeTo(1, 500);
-            });
-
-            if (Application.Current.Properties.ContainsKey("token") && Application.Current.Properties["token"] != null)
-            {       
-                loadTicket();
+                await internetCon.FadeTo(1, 500);
             }
             else
             {
+                isConnected = true;
+                await internetCon.FadeTo(0, 500);
+                internetCon.IsVisible = false;
+            }
+
+            Subscribe();
+
+            if (Application.Current.Properties.ContainsKey("token") && Application.Current.Properties["token"] != null)
+                LoadTicket();
+            else
+            {
                 Application.Current.Properties["token"] = null;
-                unSubscribe();
+                UnSubscribe();
                 App.Current.MainPage = new Login();
             }
         }
@@ -77,22 +62,22 @@ namespace SGTMobile
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            unSubscribe();
+            UnSubscribe();
         }
+        #endregion
 
-        public async void loadTicket()
+        #region Funciones
+        public async void LoadTicket()
         {
             try
             {
                 Loader.IsVisible = true;
                 if (isConnected)
                 {
-                    var resultado = await HttpClientInstance.GetAsync(controller + "/" + TicketId);
+                    var resultado = await HttpClientInstance.GetAsync("/" + TicketId);
                     switch (resultado.StatusCode)
                     {
                         case HttpStatusCode.OK:
-
-
                             var json = resultado.Content.ReadAsStringAsync().Result;
                             ticket = Tickets.FromJsonUnique(json);
                             lblTitulo.Text = ticket.Titulo;
@@ -121,12 +106,8 @@ namespace SGTMobile
 
                             await DisplayAlert("Warning", "Your session is expired", "Login");
                             Application.Current.Properties["token"] = null;
-                            unSubscribe();
+                            UnSubscribe();
                             App.Current.MainPage = new Login();
-                            break;
-
-                        default:
-                            //error
                             break;
                     }
                 }
@@ -135,12 +116,12 @@ namespace SGTMobile
                     //ticket guardada previamente    
                     if (Application.Current.Properties.ContainsKey("tickets") && Application.Current.Properties["tickets"] != null)
                     {
-                        
+
                         listTicket = Tickets.FromJson(Application.Current.Properties["tickets"] as string);
                         ticket = listTicket.Where(x => x.Id == TicketId).FirstOrDefault();
                         if (ticket != null)
                         {
-                            await DisplayAlert("Warning: No Internet Connection", "Saved Ticket Loaded", "Ok");
+                            //await DisplayAlert("Warning: No Internet Connection", "Saved Ticket Loaded", "Ok");
                             lblTitulo.Text = ticket.Titulo;
                             lblClientTicket.Text = ticket.ClientTicket;
                             lblAccount.Text = ticket.Account;
@@ -160,14 +141,14 @@ namespace SGTMobile
                         else
                         {
                             await DisplayAlert("Warning: No Internet Connection", "None information saved", "Ok");
-                            unSubscribe();
+                            UnSubscribe();
                             await Navigation.PopAsync();
                         }
                     }
                 }
-                
+
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 await DisplayAlert("Error", "Error while loading ticket", "Try it Again");
                 await Navigation.PopAsync();
@@ -176,7 +157,7 @@ namespace SGTMobile
             {
                 Loader.IsVisible = false;
             }
-            
+
         }
 
         private void SaveTicket()
@@ -190,17 +171,37 @@ namespace SGTMobile
                     tk = this.ticket;
                     Application.Current.Properties["tickets"] = Tickets.ToJson(listTicket);
                 }
-
-
             }
         }
+        #endregion
 
-        private void unSubscribe()
+        #region MessageCenter
+        private void UnSubscribe()
         {
             MessagingCenter.Unsubscribe<App>(this, "connect");
 
             MessagingCenter.Unsubscribe<App>(this, "no_connect");
         }
+
+        private void Subscribe()
+        {
+            MessagingCenter.Subscribe<App>(this, "connect", async (sender) =>
+            {
+                isConnected = true;
+                await internetCon.FadeTo(0, 500);
+                internetCon.IsVisible = false;
+                LoadTicket();
+            });
+
+            MessagingCenter.Subscribe<App>(this, "no_connect", async (sender) =>
+            {
+                isConnected = false;
+                await DisplayAlert("Warning", "No Internet Connection", "Ok");
+                internetCon.IsVisible = true;
+                await internetCon.FadeTo(1, 500);
+            });
+        }
+        #endregion
 
     }
 }

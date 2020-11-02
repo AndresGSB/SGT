@@ -15,7 +15,7 @@
                     <Label Text="List" HorizontalOptions="StartAndExpand"></Label>
                     <Label Text="More Options" HorizontalOptions="EndAndExpand"></Label>
                 </StackLayout>
-                <ListView x:Name="listaTickets" HasUnevenRows="true" IsPullToRefreshEnabled="True" IsRefreshing="True" ItemSelected="listaTickets_ItemSelected" Margin="0,-5">
+                <ListView x:Name="listaTickets" HasUnevenRows="true" IsPullToRefreshEnabled="True" IsRefreshing="True" ItemSelected="ListaTickets_ItemSelected" Margin="0,-5">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell Tapped="ViewCell_Tapped">

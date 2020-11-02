@@ -130,6 +130,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Fingerprint/2.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.8.5": {
         "type": "package",
         "compile": {
@@ -137,53 +149,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
-        }
-      },
-      "Rg.Plugins.Popup/2.0.0.3": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "4.5.0.530"
-        },
-        "compile": {
-          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
-        }
-      },
-      "SkiaSharp/1.60.0": {
-        "type": "package",
-        "compile": {
-          "lib/XamariniOS/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/XamariniOS/SkiaSharp.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/osx/native/libSkiaSharp.dylib": {
-            "assetType": "native",
-            "rid": "osx"
-          },
-          "runtimes/win7-x64/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win7-x64"
-          },
-          "runtimes/win7-x86/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win7-x86"
-          }
-        }
-      },
-      "SkiaSharp.Svg/1.60.0": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "1.60.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/SkiaSharp.Extended.Svg.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SkiaSharp.Extended.Svg.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -307,28 +272,6 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Net.Http/4.3.4": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.3/System.Net.Http.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
         }
       },
       "System.Net.Requests/4.3.0": {
@@ -644,32 +587,15 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Svg/1.0.3": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp.Svg": "1.60.0",
-          "Xamarin.Forms": "3.0.0.482510"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/SvgImageSource.dll": {},
-          "lib/Xamarin.iOS10/SvgImageSource.iOS.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/SvgImageSource.dll": {},
-          "lib/Xamarin.iOS10/SvgImageSource.iOS.dll": {}
-        }
-      },
       "SGTMobile/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.3",
-          "System.Net.Http": "4.3.4",
+          "Plugin.Fingerprint": "2.1.1",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "4.8.0.1269",
-          "Xamarin.Forms.Svg": "1.0.3",
           "itext7": "7.1.12"
         },
         "compile": {
@@ -809,6 +735,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Fingerprint/2.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.8.5": {
         "type": "package",
         "compile": {
@@ -816,39 +754,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
-        }
-      },
-      "Rg.Plugins.Popup/2.0.0.3": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "4.5.0.530"
-        },
-        "compile": {
-          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
-        }
-      },
-      "SkiaSharp/1.60.0": {
-        "type": "package",
-        "compile": {
-          "lib/XamariniOS/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/XamariniOS/SkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Svg/1.60.0": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "1.60.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/SkiaSharp.Extended.Svg.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SkiaSharp.Extended.Svg.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -948,18 +853,6 @@
         },
         "runtime": {
           "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Net.Http/4.3.4": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "runtimes/win/lib/netstandard1.3/System.Net.Http.dll": {}
         }
       },
       "System.Net.Requests/4.3.0": {
@@ -1235,32 +1128,15 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Svg/1.0.3": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp.Svg": "1.60.0",
-          "Xamarin.Forms": "3.0.0.482510"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/SvgImageSource.dll": {},
-          "lib/Xamarin.iOS10/SvgImageSource.iOS.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/SvgImageSource.dll": {},
-          "lib/Xamarin.iOS10/SvgImageSource.iOS.dll": {}
-        }
-      },
       "SGTMobile/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.3",
-          "System.Net.Http": "4.3.4",
+          "Plugin.Fingerprint": "2.1.1",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "4.8.0.1269",
-          "Xamarin.Forms.Svg": "1.0.3",
           "itext7": "7.1.12"
         },
         "compile": {
@@ -1400,6 +1276,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Fingerprint/2.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.8.5": {
         "type": "package",
         "compile": {
@@ -1407,39 +1295,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
-        }
-      },
-      "Rg.Plugins.Popup/2.0.0.3": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "4.5.0.530"
-        },
-        "compile": {
-          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
-        }
-      },
-      "SkiaSharp/1.60.0": {
-        "type": "package",
-        "compile": {
-          "lib/XamariniOS/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/XamariniOS/SkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Svg/1.60.0": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "1.60.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/SkiaSharp.Extended.Svg.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SkiaSharp.Extended.Svg.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -1534,18 +1389,6 @@
       },
       "System.Linq/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Net.Http/4.3.4": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
         "compile": {
           "ref/xamarinios10/_._": {}
         },
@@ -1826,32 +1669,15 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Svg/1.0.3": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp.Svg": "1.60.0",
-          "Xamarin.Forms": "3.0.0.482510"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/SvgImageSource.dll": {},
-          "lib/Xamarin.iOS10/SvgImageSource.iOS.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/SvgImageSource.dll": {},
-          "lib/Xamarin.iOS10/SvgImageSource.iOS.dll": {}
-        }
-      },
       "SGTMobile/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.3",
-          "System.Net.Http": "4.3.4",
+          "Plugin.Fingerprint": "2.1.1",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "4.8.0.1269",
-          "Xamarin.Forms.Svg": "1.0.3",
           "itext7": "7.1.12"
         },
         "compile": {
@@ -1991,6 +1817,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Fingerprint/2.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Plugin.Fingerprint.dll": {}
+        }
+      },
       "Portable.BouncyCastle/1.8.5": {
         "type": "package",
         "compile": {
@@ -1998,39 +1836,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
-        }
-      },
-      "Rg.Plugins.Popup/2.0.0.3": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "4.5.0.530"
-        },
-        "compile": {
-          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
-        }
-      },
-      "SkiaSharp/1.60.0": {
-        "type": "package",
-        "compile": {
-          "lib/XamariniOS/SkiaSharp.dll": {}
-        },
-        "runtime": {
-          "lib/XamariniOS/SkiaSharp.dll": {}
-        }
-      },
-      "SkiaSharp.Svg/1.60.0": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "1.60.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/SkiaSharp.Extended.Svg.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/SkiaSharp.Extended.Svg.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -2125,18 +1930,6 @@
       },
       "System.Linq/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/xamarinios10/_._": {}
-        },
-        "runtime": {
-          "lib/xamarinios10/_._": {}
-        }
-      },
-      "System.Net.Http/4.3.4": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
         "compile": {
           "ref/xamarinios10/_._": {}
         },
@@ -2417,32 +2210,15 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.Svg/1.0.3": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp.Svg": "1.60.0",
-          "Xamarin.Forms": "3.0.0.482510"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/SvgImageSource.dll": {},
-          "lib/Xamarin.iOS10/SvgImageSource.iOS.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/SvgImageSource.dll": {},
-          "lib/Xamarin.iOS10/SvgImageSource.iOS.dll": {}
-        }
-      },
       "SGTMobile/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Rg.Plugins.Popup": "2.0.0.3",
-          "System.Net.Http": "4.3.4",
+          "Plugin.Fingerprint": "2.1.1",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "4.8.0.1269",
-          "Xamarin.Forms.Svg": "1.0.3",
           "itext7": "7.1.12"
         },
         "compile": {
@@ -2662,6 +2438,47 @@
         "packageIcon.png"
       ]
     },
+    "Plugin.Fingerprint/2.1.1": {
+      "sha512": "Hg4C6OoTy3Emhb2HefaTmaq0nk1SKDe2q8oMUbovrNMQFrkKV1orr+pcDnoVWeRQVygMvWl1tXJMb2XSuFO4jg==",
+      "type": "package",
+      "path": "plugin.fingerprint/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid90/Plugin.Fingerprint.dll",
+        "lib/monoandroid90/Plugin.Fingerprint.pdb",
+        "lib/monoandroid90/Plugin.Fingerprint.xml",
+        "lib/net45/Plugin.Fingerprint.dll",
+        "lib/net45/Plugin.Fingerprint.pdb",
+        "lib/net45/Plugin.Fingerprint.xml",
+        "lib/netstandard2.0/Plugin.Fingerprint.dll",
+        "lib/netstandard2.0/Plugin.Fingerprint.pdb",
+        "lib/netstandard2.0/Plugin.Fingerprint.xml",
+        "lib/tizen40/Plugin.Fingerprint.dll",
+        "lib/tizen40/Plugin.Fingerprint.pdb",
+        "lib/tizen40/Plugin.Fingerprint.xml",
+        "lib/uap10.0.16299/Plugin.Fingerprint.dll",
+        "lib/uap10.0.16299/Plugin.Fingerprint.pdb",
+        "lib/uap10.0.16299/Plugin.Fingerprint.pri",
+        "lib/uap10.0.16299/Plugin.Fingerprint.xml",
+        "lib/xamarinios10/Plugin.Fingerprint.dll",
+        "lib/xamarinios10/Plugin.Fingerprint.pdb",
+        "lib/xamarinios10/Plugin.Fingerprint.xml",
+        "lib/xamarinmac20/Plugin.Fingerprint.dll",
+        "lib/xamarinmac20/Plugin.Fingerprint.pdb",
+        "lib/xamarinmac20/Plugin.Fingerprint.xml",
+        "lib/xamarintvos10/Plugin.Fingerprint.dll",
+        "lib/xamarintvos10/Plugin.Fingerprint.pdb",
+        "lib/xamarintvos10/Plugin.Fingerprint.xml",
+        "lib/xamarinwatchos10/Plugin.Fingerprint.dll",
+        "lib/xamarinwatchos10/Plugin.Fingerprint.pdb",
+        "lib/xamarinwatchos10/Plugin.Fingerprint.xml",
+        "plugin.fingerprint.2.1.1.nupkg.sha512",
+        "plugin.fingerprint.nuspec",
+        "readme.txt",
+        "xamarin_fingerprint.png"
+      ]
+    },
     "Portable.BouncyCastle/1.8.5": {
       "sha512": "EaCgmntbH1sOzemRTqyXSqYjB6pLH7VCYHhhDYZ59guHSD5qPwhIYa7kfy0QUlmTRt9IXhaXdFhNuBUArp70Ng==",
       "type": "package",
@@ -2679,113 +2496,6 @@
         "lib/netstandard2.0/BouncyCastle.Crypto.xml",
         "portable.bouncycastle.1.8.5.nupkg.sha512",
         "portable.bouncycastle.nuspec"
-      ]
-    },
-    "Rg.Plugins.Popup/2.0.0.3": {
-      "sha512": "/lrKxxsdaF9T+YEnVDaUMj0angdRyvpngSmX8veY/QYhSjT4x3guJTsL8O8D4egDf7MI5McnmMAsst0tkN1LOA==",
-      "type": "package",
-      "path": "rg.plugins.popup/2.0.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "icon.png",
-        "lib/monoandroid10.0/Rg.Plugins.Popup.dll",
-        "lib/monoandroid10.0/Rg.Plugins.Popup.pdb",
-        "lib/monoandroid10.0/Rg.Plugins.Popup.xml",
-        "lib/monoandroid90/Rg.Plugins.Popup.dll",
-        "lib/monoandroid90/Rg.Plugins.Popup.pdb",
-        "lib/monoandroid90/Rg.Plugins.Popup.xml",
-        "lib/net472/Rg.Plugins.Popup.dll",
-        "lib/net472/Rg.Plugins.Popup.pdb",
-        "lib/net472/Rg.Plugins.Popup.xml",
-        "lib/netcoreapp3.1/Rg.Plugins.Popup.dll",
-        "lib/netcoreapp3.1/Rg.Plugins.Popup.pdb",
-        "lib/netcoreapp3.1/Rg.Plugins.Popup.xml",
-        "lib/netstandard2.0/Rg.Plugins.Popup.dll",
-        "lib/netstandard2.0/Rg.Plugins.Popup.pdb",
-        "lib/netstandard2.0/Rg.Plugins.Popup.xml",
-        "lib/tizen40/Rg.Plugins.Popup.dll",
-        "lib/tizen40/Rg.Plugins.Popup.pdb",
-        "lib/tizen40/Rg.Plugins.Popup.xml",
-        "lib/uap10.0.17763/Rg.Plugins.Popup.dll",
-        "lib/uap10.0.17763/Rg.Plugins.Popup.pdb",
-        "lib/uap10.0.17763/Rg.Plugins.Popup.pri",
-        "lib/uap10.0.17763/Rg.Plugins.Popup.xml",
-        "lib/xamarinios10/Rg.Plugins.Popup.dll",
-        "lib/xamarinios10/Rg.Plugins.Popup.pdb",
-        "lib/xamarinios10/Rg.Plugins.Popup.xml",
-        "lib/xamarinmac20/Rg.Plugins.Popup.dll",
-        "lib/xamarinmac20/Rg.Plugins.Popup.pdb",
-        "lib/xamarinmac20/Rg.Plugins.Popup.xml",
-        "lib/xamarintvos10/Rg.Plugins.Popup.dll",
-        "lib/xamarintvos10/Rg.Plugins.Popup.pdb",
-        "lib/xamarintvos10/Rg.Plugins.Popup.xml",
-        "lib/xamarinwatchos10/Rg.Plugins.Popup.dll",
-        "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
-        "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
-        "readme.txt",
-        "rg.plugins.popup.2.0.0.3.nupkg.sha512",
-        "rg.plugins.popup.nuspec"
-      ]
-    },
-    "SkiaSharp/1.60.0": {
-      "sha512": "HoSNIZH54rinevEhLUWdeclr+H/QdmOp252+Tt07HTXwQyvRl9eW32ga/X7T56wsR855SKprb0RcnBPRCzlqSA==",
-      "type": "package",
-      "path": "skiasharp/1.60.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/net45/SkiaSharp.dll.config",
-        "build/net45/SkiaSharp.targets",
-        "lib/MonoAndroid/SkiaSharp.dll",
-        "lib/MonoAndroid/SkiaSharp.xml",
-        "lib/XamarinMac/SkiaSharp.dll",
-        "lib/XamarinMac/SkiaSharp.xml",
-        "lib/XamariniOS/SkiaSharp.dll",
-        "lib/XamariniOS/SkiaSharp.xml",
-        "lib/XamarintvOS/SkiaSharp.dll",
-        "lib/XamarintvOS/SkiaSharp.xml",
-        "lib/XamarinwatchOS/SkiaSharp.dll",
-        "lib/XamarinwatchOS/SkiaSharp.xml",
-        "lib/net45/SkiaSharp.dll",
-        "lib/net45/SkiaSharp.dll.config",
-        "lib/net45/SkiaSharp.xml",
-        "lib/netstandard1.3/SkiaSharp.dll",
-        "lib/netstandard1.3/SkiaSharp.xml",
-        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.dll",
-        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.xml",
-        "lib/uap10.0/SkiaSharp.dll",
-        "lib/uap10.0/SkiaSharp.xml",
-        "runtimes/osx/native/libSkiaSharp.dylib",
-        "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll",
-        "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll",
-        "runtimes/win7-x64/native/libSkiaSharp.dll",
-        "runtimes/win7-x86/native/libSkiaSharp.dll",
-        "skiasharp.1.60.0.nupkg.sha512",
-        "skiasharp.nuspec",
-        "xamarin.interactive/SkiaSharp.Workbooks.dll"
-      ]
-    },
-    "SkiaSharp.Svg/1.60.0": {
-      "sha512": "rTneyM6mt0w2xCCampFlkO3mGFIwGEJo7L2X3JOdyeMCZDQkyqv7m9kZfA89kLSErXErFnY72TZsryzqTIiT7g==",
-      "type": "package",
-      "path": "skiasharp.svg/1.60.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard1.3/SkiaSharp.Extended.Svg.dll",
-        "lib/netstandard2.0/SkiaSharp.Extended.Svg.dll",
-        "lib/portable-net45+win8+wp8+wpa81/SkiaSharp.Extended.Svg.dll",
-        "skiasharp.svg.1.60.0.nupkg.sha512",
-        "skiasharp.svg.nuspec"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -3444,48 +3154,6 @@
         "ref/xamarinwatchos10/_._",
         "system.linq.4.1.0.nupkg.sha512",
         "system.linq.nuspec"
-      ]
-    },
-    "System.Net.Http/4.3.4": {
-      "sha512": "aOa2d51SEbmM+H+Csw7yJOuNZoHkrP2XnAurye5HWYgGVVU54YZDvsLUYRv6h18X3sPnjNCANmN7ZhIPiqMcjA==",
-      "type": "package",
-      "path": "system.net.http/4.3.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/Xamarinmac20/_._",
-        "lib/monoandroid10/_._",
-        "lib/monotouch10/_._",
-        "lib/net45/_._",
-        "lib/net46/System.Net.Http.dll",
-        "lib/portable-net45+win8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/Xamarinmac20/_._",
-        "ref/monoandroid10/_._",
-        "ref/monotouch10/_._",
-        "ref/net45/_._",
-        "ref/net46/System.Net.Http.dll",
-        "ref/netcore50/System.Net.Http.dll",
-        "ref/netstandard1.1/System.Net.Http.dll",
-        "ref/netstandard1.3/System.Net.Http.dll",
-        "ref/portable-net45+win8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll",
-        "runtimes/win/lib/net46/System.Net.Http.dll",
-        "runtimes/win/lib/netcore50/System.Net.Http.dll",
-        "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
-        "system.net.http.4.3.4.nupkg.sha512",
-        "system.net.http.nuspec"
       ]
     },
     "System.Net.Requests/4.3.0": {
@@ -4554,31 +4222,6 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "Xamarin.Forms.Svg/1.0.3": {
-      "sha512": "CL2GeEGJr5cQmdJG/x4KruKpGMmQPaBjpzAFI79BJKUFCPrw2SNbvI1Uo+KdyXpXzjcSLglj80KYcD0YilrWwQ==",
-      "type": "package",
-      "path": "xamarin.forms.svg/1.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid/SvgImageSource.Droid.dll",
-        "lib/MonoAndroid/SvgImageSource.Droid.xml",
-        "lib/MonoAndroid/SvgImageSource.dll",
-        "lib/MonoAndroid/SvgImageSource.xml",
-        "lib/MonoTouch/SvgImageSource.dll",
-        "lib/MonoTouch/SvgImageSource.iOS.dll",
-        "lib/MonoTouch/SvgImageSource.iOS.xml",
-        "lib/MonoTouch/SvgImageSource.xml",
-        "lib/Xamarin.iOS10/SvgImageSource.dll",
-        "lib/Xamarin.iOS10/SvgImageSource.iOS.dll",
-        "lib/Xamarin.iOS10/SvgImageSource.iOS.xml",
-        "lib/Xamarin.iOS10/SvgImageSource.xml",
-        "lib/netstandard2.0/SvgImageSource.dll",
-        "lib/netstandard2.0/SvgImageSource.xml",
-        "xamarin.forms.svg.1.0.3.nupkg.sha512",
-        "xamarin.forms.svg.nuspec"
-      ]
-    },
     "SGTMobile/1.0.0": {
       "type": "project",
       "path": "../SGT-Mobile/SGTMobile.csproj",
@@ -4587,6 +4230,7 @@
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
+      "Plugin.Fingerprint >= 2.1.1",
       "SGTMobile >= 1.0.0",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.8.0.1269"
@@ -4634,6 +4278,10 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
+          "Plugin.Fingerprint": {
+            "target": "Package",
+            "version": "[2.1.1, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.5.3.2, )"

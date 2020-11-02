@@ -31,12 +31,20 @@ namespace SGT.Web.ApiControllers
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             //Esta registrado en SGT
-            if (!checkFEMobileApp(login.Email))
-                throw new HttpResponseException(HttpStatusCode.Forbidden);
+            if (!checkFEMobileApp(login.Email, true, false))
+            {
+                if (checkFEMobileApp(login.Email, false, false))
+                    throw new HttpResponseException(HttpStatusCode.Unauthorized);
+                else
+                    throw new HttpResponseException(HttpStatusCode.Forbidden);
+            }
+                
 
             using (var sp = new SharePointContext())
             {
-                var fes = Ingenieros.Where(x => x.Email == login.Email && x.Password == Encrypt.GetSHA256(login.Password) && x.MobielApp == true).FirstOrDefault();
+                var fes = Ingenieros.Where(x => x.Email == login.Email 
+                                    && x.Password == Encrypt.GetSHA256(login.Password) 
+                                    && x.MobielApp == true ).FirstOrDefault();
                 if (fes == null)
                 {
                     throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -60,7 +68,36 @@ namespace SGT.Web.ApiControllers
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             //Esta registrado en SGT
-            if (checkFEMobileApp(login.Email))
+            if (checkFEMobileApp(login.Email,false, true))
+                throw new HttpResponseException(HttpStatusCode.Forbidden);
+
+            using (var sp = new SharePointContext())
+            {
+                this.Ingenieros = sp.FE().ToList();
+                var fes = Ingenieros.Where(x => x.Email.ToLower() == login.Email ).FirstOrDefault();
+                if (fes != null)
+                {
+                    fes.Password = Encrypt.GetSHA256(login.Password);
+                    sp.ChangePasswordFE(fes);
+                }
+            }
+
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("changePassword")]
+        public IHttpActionResult ChangePassword(LoginRequest login)
+        {
+            if (login == null || login.Email == "" || login.Password == "")
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+            //No existe el email en SGT
+            if (!checkFEEmail(login.Email))
+                throw new HttpResponseException(HttpStatusCode.BadRequest);
+
+            //Esta registrado en SGT
+            if (!checkFEMobileApp(login.Email,false,false))
                 throw new HttpResponseException(HttpStatusCode.Forbidden);
 
             using (var sp = new SharePointContext())
@@ -71,6 +108,10 @@ namespace SGT.Web.ApiControllers
                 {
                     fes.Password = Encrypt.GetSHA256(login.Password);
                     sp.ChangePasswordFE(fes);
+                }
+                else
+                {
+                    throw new HttpResponseException(HttpStatusCode.Unauthorized);
                 }
             }
 
@@ -92,15 +133,14 @@ namespace SGT.Web.ApiControllers
             return false;
         }
 
-        private bool checkFEMobileApp(string email)
+        private bool checkFEMobileApp(string email, bool checkMobile, bool checkPassword )
         {
-            var fe = Ingenieros.Where(x => x.Email.ToLower() == email).FirstOrDefault();
-            if (fe.MobielApp == true)
+            var fe = Ingenieros.Where(x => x.Email.ToLower() == email ).FirstOrDefault();
+            if (fe.MobielApp == checkMobile && String.IsNullOrEmpty(fe.Password) == checkPassword)
             {
                 return true;
             }
             return false;
         }
-
     }
 }

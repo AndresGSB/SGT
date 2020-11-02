@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OVFUO+az31Of23PiZc98EBJfhcQ40gKiD7KuImLgH2L5wFFkD+73xjNehL0afm5piLZKnIukLAyDQfN8j0QuAg==",
+  "dgSpecHash": "Y3fog4oTAcrl2j0UqxWUXBZPTbWBlS4ymcNL6QT+tOSC+6O/IZ/I23aG0wlL5AaCNW3QhyLOdTjF3osDwIRTCQ==",
   "success": true,
   "projectFilePath": "E:\\JAMS\\Trabajo\\GSB\\Mobile\\SGT-Mobile\\SGT-Mobile\\SGT-Mobile.iOS\\SGTMobile.iOS.csproj",
   "expectedPackageFiles": [
@@ -11,10 +11,8 @@
     "C:\\Users\\deca4\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\1.1.0\\microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\microsoft.extensions.dependencymodel\\1.1.0\\microsoft.extensions.dependencymodel.1.1.0.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\deca4\\.nuget\\packages\\plugin.fingerprint\\2.1.1\\plugin.fingerprint.2.1.1.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\portable.bouncycastle\\1.8.5\\portable.bouncycastle.1.8.5.nupkg.sha512",
-    "C:\\Users\\deca4\\.nuget\\packages\\rg.plugins.popup\\2.0.0.3\\rg.plugins.popup.2.0.0.3.nupkg.sha512",
-    "C:\\Users\\deca4\\.nuget\\packages\\skiasharp\\1.60.0\\skiasharp.1.60.0.nupkg.sha512",
-    "C:\\Users\\deca4\\.nuget\\packages\\skiasharp.svg\\1.60.0\\skiasharp.svg.1.60.0.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
@@ -26,7 +24,6 @@
     "C:\\Users\\deca4\\.nuget\\packages\\system.io\\4.1.0\\system.io.4.1.0.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\system.io.filesystem\\4.0.1\\system.io.filesystem.4.0.1.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\system.linq\\4.1.0\\system.linq.4.1.0.nupkg.sha512",
-    "C:\\Users\\deca4\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\system.net.requests\\4.3.0\\system.net.requests.4.3.0.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\system.reflection.typeextensions\\4.1.0\\system.reflection.typeextensions.4.1.0.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\system.runtime.extensions\\4.1.0\\system.runtime.extensions.4.1.0.nupkg.sha512",
@@ -43,8 +40,7 @@
     "C:\\Users\\deca4\\.nuget\\packages\\xamarin.controls.signaturepad\\3.0.0\\xamarin.controls.signaturepad.3.0.0.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\xamarin.controls.signaturepad.forms\\3.0.0\\xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512",
     "C:\\Users\\deca4\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\deca4\\.nuget\\packages\\xamarin.forms\\4.8.0.1269\\xamarin.forms.4.8.0.1269.nupkg.sha512",
-    "C:\\Users\\deca4\\.nuget\\packages\\xamarin.forms.svg\\1.0.3\\xamarin.forms.svg.1.0.3.nupkg.sha512"
+    "C:\\Users\\deca4\\.nuget\\packages\\xamarin.forms\\4.8.0.1269\\xamarin.forms.4.8.0.1269.nupkg.sha512"
   ],
   "logs": []
 }

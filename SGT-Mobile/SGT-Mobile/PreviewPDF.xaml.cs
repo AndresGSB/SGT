@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
@@ -25,42 +25,64 @@ namespace SGTMobile
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var fileName = getNameFile();
-            var pdf_filename_fill = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), fileName + " (Filled).pdf");
-            var pdf_filename_signed = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), fileName + " (Signed).pdf");
-            var path = "";
-            if (File.Exists(pdf_filename_signed))
-                path = pdf_filename_signed;
-            else
-                path = pdf_filename_fill;
 
-            if (Device.RuntimePlatform == Device.Android)
+            try
             {
-                var dependency = DependencyService.Get<ILocalFileProvider>();
+                var fileName = getNameFile();
+                var pdf_filename_fill = System.IO.Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), fileName + " (Filled).pdf");
+                var pdf_filename_signed = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), fileName + " (Signed).pdf");
+                var path = "";
+                if (File.Exists(pdf_filename_signed))
+                    path = pdf_filename_signed;
+                else
+                    path = pdf_filename_fill;
 
-                if (dependency == null)
+                if (Device.RuntimePlatform == Device.Android)
                 {
-                    DisplayAlert("Error loading PDF", "Try again", "OK");
+                    var status_write = await RequestPermision.CheckAndRequestPermissionAsync<Permissions.StorageWrite>(new Permissions.StorageWrite());
+                    var status_read = await RequestPermision.CheckAndRequestPermissionAsync<Permissions.StorageRead>(new Permissions.StorageRead());
 
-                    return;
-                }
-                using (FileStream pdfStream = File.OpenRead(path))
-                {
-                    var uuid = Guid.NewGuid().ToString();
-                    local = Task.Run(() => dependency.SaveFileToDisk(pdfStream, $"{uuid}.pdf")).Result;
+                    if (status_write == PermissionStatus.Granted && status_read == PermissionStatus.Granted)
+                    {
+                        var dependency = DependencyService.Get<ILocalFileProvider>();
+
+                        if (dependency == null)
+                        {
+                            await DisplayAlert("Error loading PDF", "Try again", "OK");
+                            return;
+                        }
+                        using (FileStream pdfStream = File.OpenRead(path))
+                        {
+                            local = Task.Run(() => dependency.SaveFileToDisk(pdfStream, $"{fileName}.pdf")).Result;
+                        }
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error Permissions", "Grant permission in order to preview the file", "OK");
+                        await Navigation.PopAsync();
+                    }
                 }
 
+                var list = Android.App.Application.Context.Assets.List("pdfjs");
+
+                if (Device.RuntimePlatform == Device.Android)
+                    PdfView.Source = $"file:///android_asset/pdfjs/web/viewer.html?file={"file:///" + local}";
+                else
+                    PdfView.Source = path;
             }
-
+            catch (Exception)
+            {
+                await DisplayAlert("Error", "Try it again", "OK");
+            }
             
+        }
 
-            if (Device.RuntimePlatform == Device.Android)
-                PdfView.Source = $"file:///android_asset/pdfjs/web/viewer.html?file={"file:///" + WebUtility.UrlEncode(local)}";
-            else
-                PdfView.Source = path;
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
         }
 
         private string getNameFile()
@@ -68,18 +90,6 @@ namespace SGTMobile
             string date = String.Format("{0:ddMMyyyy}", this.ticket.ServiceDate);
             return this.ticket.ClientTicket + " " + this.ticket.SiteName.NombreSitio + " " + date;
         }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            if (File.Exists(local))
-            {
-                File.Delete(local);
-            }
-        }
-
-
-
 
     }
 }

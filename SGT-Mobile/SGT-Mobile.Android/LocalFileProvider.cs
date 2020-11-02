@@ -11,7 +11,7 @@ namespace SGT_Mobile.Droid
     public class LocalFileProvider : ILocalFileProvider
     {
        
-        private readonly string _rootDir = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "sgt");
+        private readonly string _rootDir = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "SGT_GSB");
 
         public async Task<string> SaveFileToDisk(Stream pdfStream, string fileName)
         {
@@ -25,7 +25,6 @@ namespace SGT_Mobile.Droid
                 await pdfStream.CopyToAsync(memoryStream);
                 File.WriteAllBytes(filePath, memoryStream.ToArray());
             }
-            var files = Android.App.Application.Context.Assets.List("");
             return filePath;
         }
     }

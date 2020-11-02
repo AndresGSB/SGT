@@ -2,15 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SGTMobile.Util"
              mc:Ignorable="d"
              Title="Edit Report"
              NavigationPage.HasNavigationBar="True"
              x:Class="SGTMobile.Report">
     <ContentPage.Content>
         <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout Padding="10" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
-                <ActivityIndicator IsRunning="true" x:Name="Loader" Color="{StaticResource colorGray}"  AnchorX="50" AnchorY="50" />
+
+            <StackLayout Padding="10" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" IsVisible="true"> 
 
                 <ScrollView>
                     <StackLayout x:Name="layout_Form" IsVisible="false">
@@ -40,7 +40,8 @@
                            AbsoluteLayout.LayoutFlags="All"/>
             </AbsoluteLayout>
 
-            
+
+
         </AbsoluteLayout>
         
         

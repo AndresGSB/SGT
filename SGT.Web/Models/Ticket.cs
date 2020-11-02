@@ -26,7 +26,7 @@ namespace SGT.Web.Models
         public DateTime Service_Date { get; set; }
         public Sitio Site_Name { get; set; }
 
-        public File Attachment { get; set; }
+        public bool HasAttachment { get; set; }
 
         public string Service_Details_short_Activity { get; set; }
 

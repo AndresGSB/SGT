@@ -18,7 +18,20 @@
                 <Entry Placeholder="example@gmail.com"  Margin="0,-10,0,0" x:Name="txt_email" TextColor="{StaticResource colorGray}"/>
 
                 <Label Text="Password" Margin="0,3,0,0" FontSize="18" TextColor="#002E5D" FontAttributes="Bold"/>
-                <Entry x:Name="txt_password"  Margin="0,-10,0,0" TextColor="{StaticResource colorGray}" IsPassword="true"/>
+                <StackLayout Grid.Row="2" Grid.Column="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions >
+                        <Entry x:Name="txt_password" TextColor="{StaticResource colorGray}" IsPassword="true" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <Image Source="eye.png" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="1" x:Name="imgPasswordEye" HeightRequest="15" Margin="0,0,0,10" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ShowPassword"  NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </StackLayout>
 
                 <Label Text="Confirm your Password" Margin="0,3,0,0" FontSize="18" TextColor="#002E5D" FontAttributes="Bold"/>
                 <Entry x:Name="txt_confirm_password"  Margin="0,-10,0,0" TextColor="{StaticResource colorGray}" IsPassword="true"/>

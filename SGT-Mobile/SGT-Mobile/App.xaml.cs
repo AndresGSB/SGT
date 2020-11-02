@@ -18,8 +18,6 @@ namespace SGT_Mobile
 
         protected override void OnStart()
         {
-            ConnectivityTest.StartListening();
-
             Connectivity.ConnectivityChanged += (sender, args) =>
             {
                 if (Connectivity.NetworkAccess == NetworkAccess.Internet)
@@ -33,6 +31,9 @@ namespace SGT_Mobile
                 }
 
             };
+
+            CheckPermision();
+
         }
 
         protected override void OnSleep()
@@ -41,6 +42,12 @@ namespace SGT_Mobile
 
         protected override void OnResume()
         {
+        }
+
+        private async void CheckPermision()
+        {
+            var status_write = await RequestPermision.CheckAndRequestPermissionAsync<Permissions.StorageWrite>(new Permissions.StorageWrite());
+            var status_read = await RequestPermision.CheckAndRequestPermissionAsync<Permissions.StorageRead>(new Permissions.StorageRead());
         }
     }
 }

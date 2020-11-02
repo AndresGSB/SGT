@@ -8,13 +8,38 @@
              mc:Ignorable="d"
              x:Class="SGTMobile.SignReport">
     <ContentPage.Content>
-        <StackLayout Padding="15">
-            <sign:SignaturePadView x:Name="signature" StrokeWidth="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout Padding="15" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Label x:Name="lblTitle" FontSize="20" TextColor="Black"></Label>
+                <sign:SignaturePadView x:Name="signature" StrokeWidth="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="false"
                   BackgroundColor="White" StrokeColor="Black" CaptionText="Sign">
-            </sign:SignaturePadView>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  x:Name="options_Form" IsVisible="true">
-                <Button Text="Save and Sent" HorizontalOptions="FillAndExpand"  Style="{StaticResource btn_green}" x:Name="btnSent" Clicked="btnSent_Clicked"></Button>
+                </sign:SignaturePadView>
+                <sign:SignaturePadView x:Name="FEsignature" StrokeWidth="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" IsVisible="false"
+                  BackgroundColor="White" StrokeColor="Black" CaptionText="Sign">
+                </sign:SignaturePadView>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  x:Name="options_Form" IsVisible="true">
+                    <Button Text="Save Signature" HorizontalOptions="FillAndExpand"  IsVisible="false" Style="{StaticResource btn_green}" x:Name="btnSent" Clicked="btnSent_Clicked"></Button>
+                    <Button Text="POC can't sign" HorizontalOptions="FillAndExpand"  IsVisible="false" Style="{StaticResource btn_green}" x:Name="btnNoSent" Clicked="btnNoSent_Clicked"></Button>
+                    <Button Text="Save FE Signature" HorizontalOptions="FillAndExpand" IsVisible="false" Style="{StaticResource btn_green}" x:Name="btnSentFE" Clicked="btnSentFE_Clicked"></Button>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+
+            <AbsoluteLayout BackgroundColor="#22000000"
+                    AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    x:Name="loader"
+                    IsVisible="false">
+                <ActivityIndicator Color="Black"
+                           AbsoluteLayout.LayoutBounds="0.5,0.5,0.1,0.1"
+                           AbsoluteLayout.LayoutFlags="All"
+                           IsVisible="True"
+                           IsRunning="True"/>
+                <Label Text="Loading..." HorizontalOptions="Center" TextColor="Black" AbsoluteLayout.LayoutBounds="0.5,0.5,0.2,0.2"
+                           AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+        </AbsoluteLayout>
+        
     </ContentPage.Content>
 </ContentPage>

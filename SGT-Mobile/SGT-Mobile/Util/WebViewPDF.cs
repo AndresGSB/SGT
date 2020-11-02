@@ -7,6 +7,6 @@ namespace SGTMobile.Util
 {
     public class WebViewPDF : WebView
     {
-        
     }
 }
+
