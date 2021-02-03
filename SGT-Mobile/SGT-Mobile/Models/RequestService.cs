@@ -12,8 +12,8 @@ namespace SGTMobile.Models
     public class RequestService 
     {
         private static HttpClient instance;
-        private static string Server = "http://192.168.1.70/SGT/api/";
-        //private static string Server = "http://74.208.87.192/SGT/api/";
+        //private static string Server = "http://192.168.1.70/SGT/api/";
+        private static string Server = "http://74.208.87.192/SGT/api/";
         public string Controller;
 
         public RequestService(string controller)
